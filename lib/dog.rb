@@ -8,6 +8,10 @@ class Dog < Animal
 
   # Sets the speed of the dog
   def walk
-    @speed = @speed + (0.2 * @legs)
+    if @legs > 0
+      @speed = @speed + (0.2 * @legs)
+    else
+      raise TypeError, "This dog don't exist."
+    end
   end
 end

@@ -14,36 +14,36 @@ describe 'Animal' do
       expect(animal).to have_attributes(:name => nil)
     end
   end
-  context 'animal is initialized with no arguments' do
-    it 'animal has no arguments' do
+  context 'is initialized with no arguments' do
+    it ' has no arguments' do
       expect(animal.name).to be_nil
       expect(animal.species).to be_nil
-      expect(animal.speed).to eq(0)
       expect(animal.legs).to eq(0)
+      expect(animal.speed).to eq(0)
     end
   end
-  context 'animals name is a string' do
+  context 'name is a string' do
     it 'allows reading of name' do
       expect(cat).to have_attributes(:name => a_string_starting_with("C"))
     end
   end
-  context 'animals species is its actual species' do
+  context 'species is its actual species' do
     it 'animal has a specified species' do
       expect(owl.species).to include(owl.species)
     end
   end
-  context 'animals name is a String' do
-    it 'allows ready of a name that is a string' do
+  context 'name is a String' do
+    it 'allows reading of a name that is a string' do
       expect(cat.name).to be_a(String)
     end
   end
-  context 'if speed is an accessible property' do
+  context 'speed is an accessible property' do
     it 'allows reading and writing of speed' do
       expect(gazelle.speed).to eq(76)
     end
   end
-  context 'if legs is a number' do
-    it 'animal should have at least 1 leg' do
+  context 'legs is a number' do
+    it 'should have at least 1 leg' do
       # animal.legs = 0
       expect(animal.walk).to raise_error(TypeError)
     end
